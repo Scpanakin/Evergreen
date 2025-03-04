@@ -11,7 +11,7 @@ WORKDIR /app
 COPY backend /app
 
 # Set the working directory to the backend folder
-WORKDIR /app
+WORKDIR /app/backend
 
 # Install Node.js dependencies
 RUN npm install --verbose

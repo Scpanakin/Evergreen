@@ -11,7 +11,7 @@ WORKDIR /app
 COPY frontend /app
 
 # Set the working directory to the frontend folder
-WORKDIR /app
+WORKDIR /app/frontend
 
 # Install Node.js dependencies
 RUN npm install --verbose
