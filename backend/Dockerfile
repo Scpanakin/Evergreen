@@ -9,7 +9,6 @@ WORKDIR /app
 
 # Copy the application files
 COPY backend /app/backend
-COPY frontend /app/frontend
 
 # Set the working directory to the backend
 WORKDIR /app/backend
