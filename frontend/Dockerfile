@@ -7,7 +7,7 @@ RUN apt-get update && apt-get upgrade -y
 WORKDIR /app
 
 # Copy the frontend application files into the container
-COPY ./frontend /app/frontend
+COPY ./ /app/frontend
 
 # Set the working directory to the frontend folder
 WORKDIR /app/frontend
