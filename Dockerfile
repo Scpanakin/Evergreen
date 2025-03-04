@@ -1,27 +1,30 @@
-# Step 1: Use the official Amazon Linux image as the base image
-FROM amazonlinux:2023
+# Use the official Node.js 14 image as the base
+FROM node:20
 
-# Step 2: Install necessary dependencies and update the system
-RUN yum update -y && \
-    yum install -y --allowerasing git curl nodejs npm
+# Update the system
+RUN yum update -y
 
-
-# Step 3: Set the working directory for the application
+# Set the working directory
 WORKDIR /app
 
-# Step 4: Copy the application files into the container
+# Copy the application files
 COPY backend /app/backend
 COPY frontend /app/frontend
 
+# Set the working directory to the backend
 WORKDIR /app/backend
 
-
-# Step 5: Install the necessary Node.js dependencies
+# Install Node.js dependencies
 RUN npm cache clean --force && npm install --verbose
 
-
-# Step 6: Expose the port that the app will run on
+# Expose port 3000
 EXPOSE 3000
 
-# Step 7: Run the application
+# Set default environment variables
+ENV BACKEND_PORT=3000
+ENV DATABASE_URL="postgresql://username:password@localhost:5432/database_name"
+ENV JWT_SECRET="your-jwt-secret-here"
+ENV API_KEY="your-api-key-here"
+
+# Run the application
 CMD ["npm", "start"]
