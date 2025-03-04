@@ -8,7 +8,7 @@ RUN apt-get update && apt-get upgrade -y
 WORKDIR /app
 
 # Copy the backend application files into the container
-COPY ./backend /app/backend
+COPY ./ /app/backend
 
 # Set the working directory for the backend
 WORKDIR /app/backend
