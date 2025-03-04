@@ -26,4 +26,4 @@ ENV JWT_SECRET="your-jwt-secret-here"
 ENV API_KEY="your-api-key-here"
 
 # Run the application
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
