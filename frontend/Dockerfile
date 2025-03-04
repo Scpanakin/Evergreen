@@ -1,4 +1,4 @@
-# Use the official Node.js 14 image as the base
+# Use the official Node.js 20 image as the base
 FROM node:20
 
 # Update the system
@@ -7,20 +7,22 @@ RUN apt-get update && apt-get upgrade -y
 # Set the working directory
 WORKDIR /app
 
-# Copy the application files
-COPY frontend /app/frontend
+# Copy the frontend application files to the container
+COPY frontend /app
 
-# Set the working directory to the backend
-WORKDIR /app/frontend
+# Set the working directory to the frontend folder
+WORKDIR /app
 
 # Install Node.js dependencies
-RUN npm cache clean --force && npm install --verbose
+RUN npm install --verbose
 
+# Build the React app
 RUN npm run build
 
-ENV PORT=3000
+# Set environment variable for the port (if needed)
+ENV PORT=3001
 
-# Expose port 3000
+# Expose port 3001 (or another port if you prefer)
 EXPOSE 3001
 
 # Run the application
