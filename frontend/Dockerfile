@@ -4,11 +4,10 @@ FROM node:20
 # Update the system
 RUN apt-get update && apt-get upgrade -y
 
-# Set the working directory
 WORKDIR /app
 
-# Copy the frontend application files to the container
-COPY frontend /app
+# Copy the frontend application files into the container
+COPY ./frontend /app/frontend
 
 # Set the working directory to the frontend folder
 WORKDIR /app/frontend

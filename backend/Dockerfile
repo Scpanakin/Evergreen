@@ -7,10 +7,10 @@ RUN apt-get update && apt-get upgrade -y
 # Set the working directory
 WORKDIR /app
 
-# Copy the backend application files to the container
-COPY backend /app
+# Copy the backend application files into the container
+COPY ./backend /app/backend
 
-# Set the working directory to the backend folder
+# Set the working directory for the backend
 WORKDIR /app/backend
 
 # Install Node.js dependencies
