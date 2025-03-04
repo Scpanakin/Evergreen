@@ -11,7 +11,7 @@ export default function Login() {
 
       {/* Background Image */}
       <div className="absolute top-0 w-full h-[115vh] -z-1">
-      {/* <div className="absolute w-full h-[115vh] z-[-1] bg-[rgba(12,14,15,0.6)] [clip-path:url('#bg-clip')]"></div>
+      <div className="absolute w-full h-[115vh] z-[-1] bg-[rgba(12,14,15,0.6)] [clip-path:url('#bg-clip')]"></div>
         <Image
           src="/treesMist.jpg"
           alt="Forest with mist"
@@ -20,7 +20,7 @@ export default function Login() {
           className='absolute w-full h-[115vh] object-cover object-[50%_15%] -z-2 [clip-path:url("#bg-clip")]'
           priority
         />
-      */}
+     
       </div> 
 
       {/* Login Box */}
