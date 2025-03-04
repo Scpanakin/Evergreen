@@ -2,7 +2,7 @@
 FROM node:20
 
 # Update the system
-RUN yum update -y
+RUN apt-get update && apt-get upgrade -y
 
 # Set the working directory
 WORKDIR /app
