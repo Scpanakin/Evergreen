@@ -8,16 +8,16 @@ RUN apt-get update && apt-get upgrade -y
 WORKDIR /app
 
 # Copy the application files
-COPY frontend /app/backend
+COPY backend /app/backend
 
 # Set the working directory to the backend
-WORKDIR /app/frontend
+WORKDIR /app/backend
 
 # Install Node.js dependencies
 RUN npm cache clean --force && npm install --verbose
 
 # Expose port 3000
-EXPOSE 3001
+EXPOSE 3000
 
 # Set default environment variables
 ENV BACKEND_PORT=3000
@@ -25,3 +25,4 @@ ENV BACKEND_PORT=3000
 
 # Run the application
 CMD ["npm", "start"]
+
