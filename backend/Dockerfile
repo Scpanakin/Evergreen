@@ -1,4 +1,4 @@
-# Use the official Node.js 20 image as the base
+# Use the official Node.js 14 image as the base
 FROM node:20
 
 # Update the system
@@ -7,23 +7,22 @@ RUN apt-get update && apt-get upgrade -y
 # Set the working directory
 WORKDIR /app
 
-# Copy the backend application files into the container
-COPY ./ /app/backend
+# Copy the application files
+COPY backend /app/backend
 
-# Set the working directory for the backend
+# Set the working directory to the backend
 WORKDIR /app/backend
 
 # Install Node.js dependencies
-RUN npm install --verbose
+RUN npm cache clean --force && npm install --verbose
 
-# Expose port 3000 (or another port if you prefer)
+# Expose port 3000
 EXPOSE 3000
 
 # Set default environment variables
 ENV BACKEND_PORT=3000
-ENV DATABASE_URL="postgresql://username:password@postgres:5432/database_name"
-ENV JWT_SECRET="your-jwt-secret-here"
-ENV API_KEY="your-api-key-here"
 
-# Run the application (make sure your start script is correct)
-CMD ["npm", "run", "start"]
+
+# Run the application
+CMD ["npm", "start"]
+
