@@ -8,7 +8,7 @@ RUN apt-get update && apt-get upgrade -y
 WORKDIR /app
 
 # Copy the application files
-COPY frontend /app/backend
+COPY frontend /app/frontend
 
 # Set the working directory to the backend
 WORKDIR /app/frontend
