@@ -80,4 +80,4 @@ Thumbs.db
 docker-compose.override.yml
 
 # Clint specific ignores
-script-files
+script-files.env
