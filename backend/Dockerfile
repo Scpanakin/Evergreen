@@ -18,7 +18,7 @@ RUN npm install -g npm npx
 RUN npm cache clean --force && npm install --verbose
 
 # Ensure Prisma is generated before the app starts
-RUN npx prisma generate  # ✅ This ensures Prisma Client is built
+RUN npx prisma generate 
 
 # Expose port 3000
 EXPOSE 3000
@@ -28,4 +28,3 @@ ENV BACKEND_PORT=3000
 
 # Run the application
 CMD ["npm", "start"]
-
