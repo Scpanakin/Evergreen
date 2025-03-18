@@ -17,7 +17,7 @@ WORKDIR /app/frontend
 RUN npm cache clean --force && npm install --verbose
 
 # Expose port 3000
-EXPOSE 3001
+EXPOSE 80
 
 # Set default environment variables
 ENV BACKEND_PORT=3000
