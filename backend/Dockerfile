@@ -1,4 +1,4 @@
-# Use the official Node.js 20 image as the base
+# Use the official Node.js 14 image as the base
 FROM node:20
 
 # Update the system
@@ -14,6 +14,7 @@ COPY backend /app/backend
 WORKDIR /app/backend
 
 # Install Node.js dependencies
+<<<<<<< HEAD
 RUN npm install -g npm npx
 RUN npm cache clean --force && npm install --verbose
 
@@ -28,3 +29,17 @@ ENV BACKEND_PORT=4000
 
 # Run the application
 CMD ["sh", "-c", "npx prisma generate && npm start"]
+=======
+RUN npm cache clean --force && npm install --verbose
+
+# Expose port 3000
+EXPOSE 3000
+
+# Set default environment variables
+ENV BACKEND_PORT=3000
+
+
+# Run the application
+CMD ["npm", "start"]
+
+>>>>>>> 3f94874 (Fixed error with incorrect backend dockerfile)
