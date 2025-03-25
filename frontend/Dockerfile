@@ -19,8 +19,11 @@ RUN npm cache clean --force && npm install --verbose
 # Expose port 3000
 EXPOSE 3000
 
+<<<<<<< HEAD
 # Set default environment variables
 ENV BACKEND_PORT=4000
+=======
+>>>>>>> 57d9a76 (Changed port on dockerfile)
 
 
 # Run the application
