@@ -43,6 +43,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('swagger', app, document); // 'swagger' is the path where Swagger UI will be available
 
-  await app.listen(process.env.BACKEND_PORT);
+  await app.listen(process.env.BACKEND_PORT, 0.0.0.0);
 }
 bootstrap();
