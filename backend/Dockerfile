@@ -21,7 +21,7 @@ RUN npm cache clean --force && npm install --verbose
 RUN npx prisma generate 
 
 # Expose port 3000
-EXPOSE 4000
+EXPOSE 3000
 
 # Set default environment variables
 ENV BACKEND_PORT=4000
