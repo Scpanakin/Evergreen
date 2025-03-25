@@ -21,10 +21,10 @@ RUN npm cache clean --force && npm install --verbose
 RUN npx prisma generate 
 
 # Expose port 3000
-EXPOSE 3000
+EXPOSE 4000
 
 # Set default environment variables
-ENV BACKEND_PORT=3000
+ENV BACKEND_PORT=4000
 
 # Run the application
 CMD ["sh", "-c", "npx prisma generate && npm start"]
